@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>	
+		*{margin: 0;padding:0;}
+		ul{list-style: none;}
+		#tab{
+			width: 300px;	
+			height: 200px;
+			/*border: 1px solid yellow;*/
+			margin: 20px auto;
+		}	
+
+		#tab .title{
+			width: 100%;
+			height: 50px;
+		}	
+
+		h3{
+			width: 100px;
+			height: 50px;
+			float: left;
+			text-align: center;
+			line-height: 50px;
+			background: #ccc;
+		}
+
+		#tab .content{
+			width: 100%;
+			height: 150px;
+			background: pink;
+			/*padding-top:0;*/
+		}
+
+		ul{
+			padding-top: 15px;
+			margin:0 15px;
+			display: none;
+		}
+
+
+		.c_xz{display: block;}
+		.c_mo{display: none;}
+		.t_xz{background: pink;}
+		.t_mo{background: #CCC;}
+	</style>
+</head>
+<body>
+	<div id="tab">
+		<div class="title">
+			<h3 onclick="change(0)" class="t_xz">标题一</h3>
+			<h3 onclick="change(1)">标题二</h3>
+			<h3 onclick="change(2)">标题三</h3>
+		</div>
+		<div class="content">
+			<ul class="c_xz">
+				<li>离离原上草</li>
+				<li>一岁一枯荣</li>
+				<li>野火烧不尽</li>
+				<li>春风吹又生</li>
+			</ul>
+			<ul>
+				<li>床前明月光</li>
+				<li>疑似地上霜</li>
+				<li>举头望明月</li>
+				<li>低头思故乡</li>
+			</ul>
+			
+			<ul>
+				<li>饿，饿，饿</li>
+				<li>真的好饿啊，</li>
+				<li>看点种子把</li>
+			</ul>
+		</div>
+	</div>
+	<script>
+			var Title = document.getElementsByTagName('h3');
+			var Content=document.getElementsByTagName('ul');
+
+			function change(num){
+
+				// 循环一下 标题的集合
+				for(i=0; i<Title.length; i++){
+					// 判断一下当前点击的是标题几
+					if(num == i){
+						Title[i].className = 't_xz';
+						Content[i].className = 'c_xz';
+					}else{
+						Title[i].className = 't_mo';
+						Content[i].className = 'c_mo';
+					}
+
+				}
+
+			}
+
+	</script>
+		
+</body>
+</html>
